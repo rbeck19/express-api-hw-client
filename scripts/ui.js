@@ -35,8 +35,22 @@ export const onShowBookSucess = (book => {
     <h3>${book.title}</h3>
     <p>${book.author}</p>
     <p>${book.genre}</p>
+
+    <form data-id="${book._id}">
+        <input type="text" name="title" value="${book.title}" />
+        <input type="text" name="author" value="${book.author}" />
+        <input type="text" name="genre" value="${book.genre}" />
+        <input type="submit" value="Update Book" />
+    </form>
+    <button data-id="${book._id}">Delete Book</button>
     `
     showBookContainer.appendChild(div)
 })
 
+export const onUpdateBookSucess = () => {
+    messageContainer.innerText = "Update was successful"
+}
 
+export const onDeleteBookSucess = () => {
+    messageContainer.innerText = "Delete was successful"
+}
